@@ -6,9 +6,10 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 const WordsList = ({ words = [] }) => {
-  const [searchField, setSearchField] = useState("")
-  const [newWords, setNewWords] = useState(words)
+  const count = 100
 
+  const [searchField, setSearchField] = useState("")
+  const [newWords, setNewWords] = useState(words.slice(0, count))
   const myAudio = useRef("")
 
   // const filteredWords = words.filter(word => {
@@ -31,9 +32,9 @@ const WordsList = ({ words = [] }) => {
           word.romaji.toLowerCase().startsWith(searchField)
         )
       })
-      setNewWords(results)
+      setNewWords(results.slice(0, count))
     } else {
-      setNewWords(words)
+      setNewWords(words.slice(0, count))
     }
   }
 
@@ -54,6 +55,7 @@ const WordsList = ({ words = [] }) => {
           onChange={handleSearchChange}
         />
       </div>
+      <p className="text">{`showing top ${count} results only`}</p>
 
       <div className="wrapper">
         {newWords.map(word => {
@@ -97,11 +99,16 @@ const Wrapper = styled.section`
     width: 100%;
   }
   p {
-    padding-top: 0.6rem;
+    padding-top: 0.3rem;
+    padding-top: 0.3rem;
     font-size: 0.9rem;
   }
+  .text {
+    padding-bottom: 0.5rem;
+    color: #999;
+  }
   .search-container {
-    margin: 0 0 1.6rem 0;
+    margin: 0 0 1rem 0;
     text-align: center;
   }
   input {
