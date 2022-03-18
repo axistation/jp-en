@@ -33,7 +33,7 @@ const WordsList = ({ words = [] }) => {
       })
       setNewWords(results)
     } else {
-      setNewWords([])
+      setNewWords(words)
     }
   }
 
