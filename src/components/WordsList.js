@@ -111,6 +111,7 @@ const Wrapper = styled.section`
   .text {
     padding-bottom: 0.5rem;
     color: #999;
+    text-transform: lowercase;
   }
   .search-container {
     margin: 0 0 1rem 0;
