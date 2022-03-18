@@ -60,7 +60,7 @@ const WordsList = ({ words = [] }) => {
           onChange={handleSearchChange}
         />
       </div>
-      <p className="text">{`showing ${count} results only`}</p>
+      <p className="text">{`showing first ${count} results only, in abc order`}</p>
 
       <div className="wrapper">
         {newWords.map(word => {
