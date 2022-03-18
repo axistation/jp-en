@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 const WordsList = ({ words = [] }) => {
-  const count = 100
+  const count = 50
 
   const [searchField, setSearchField] = useState("")
   const [newWords, setNewWords] = useState(words.slice(0, count))
@@ -23,13 +23,12 @@ const WordsList = ({ words = [] }) => {
   const handleSearchChange = event => {
     const searchField = event.target.value.toLowerCase()
     setSearchField(searchField)
-
     if (searchField !== "") {
       const results = words.filter(word => {
         return (
-          word.english.toLowerCase().startsWith(searchField) ||
-          word.japanese.toLowerCase().startsWith(searchField) ||
-          word.romaji.toLowerCase().startsWith(searchField)
+          word.english.toLowerCase().includes(searchField) ||
+          word.japanese.toLowerCase().includes(searchField) ||
+          word.romaji.toLowerCase().includes(searchField)
         )
       })
       setNewWords(results.slice(0, count))
@@ -60,7 +59,7 @@ const WordsList = ({ words = [] }) => {
           onChange={handleSearchChange}
         />
       </div>
-      <p className="text">{`first ${count} results in alphabetical order`}</p>
+      <p className="text">{`showing at most ${count} results in alphabetical order`}</p>
 
       <div className="wrapper">
         {newWords.map(word => {
