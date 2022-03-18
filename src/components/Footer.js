@@ -18,6 +18,11 @@ const Wrapper = styled.footer`
   .footer {
     height: 1.8rem;
     background: #efefef;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.4);
   }
   div {
     line-height: 2rem;

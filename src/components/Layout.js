@@ -35,8 +35,8 @@ const Wrapper = styled.main`
   }
   .container {
     max-width: 968px;
-    margin: 0 auto;
-    padding: 1rem 0;
+    margin: 2rem auto;
+    /* padding: 1rem 0; */
   }
   .full-width {
     max-width: 95%;
