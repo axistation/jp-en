@@ -7,20 +7,34 @@ import styled from "styled-components"
 
 const WordsList = ({ words = [] }) => {
   const [searchField, setSearchField] = useState("")
+  const [newWords, setNewWords] = useState(words)
 
   const myAudio = useRef("")
 
-  const filteredWords = words.filter(word => {
-    return (
-      word.english.toLowerCase().includes(searchField) ||
-      word.japanese.toLowerCase().includes(searchField) ||
-      word.romaji.toLowerCase().includes(searchField)
-    )
-  })
+  // const filteredWords = words.filter(word => {
+  //   return (
+  //     word.english.toLowerCase().startsWith(searchField) ||
+  //     word.japanese.toLowerCase().startsWith(searchField) ||
+  //     word.romaji.toLowerCase().startsWith(searchField)
+  //   )
+  // })
 
   const handleSearchChange = event => {
     const searchField = event.target.value.toLowerCase()
     setSearchField(searchField)
+
+    if (searchField !== "") {
+      const results = words.filter(word => {
+        return (
+          word.english.toLowerCase().startsWith(searchField) ||
+          word.japanese.toLowerCase().startsWith(searchField) ||
+          word.romaji.toLowerCase().startsWith(searchField)
+        )
+      })
+      setNewWords(results)
+    } else {
+      setNewWords([])
+    }
   }
 
   const handleAudio = url => {
@@ -42,11 +56,10 @@ const WordsList = ({ words = [] }) => {
       </div>
 
       <div className="wrapper">
-        {filteredWords.map(word => {
+        {newWords.map(word => {
           const { id, english, japanese, romaji, image, audio } = word
 
           const pathToImage = getImage(image)
-          const audioUrl = audio.file.url
 
           return (
             <div
