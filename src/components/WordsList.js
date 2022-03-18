@@ -38,8 +38,13 @@ const WordsList = ({ words = [] }) => {
     }
   }
 
-  const handleAudio = url => {
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+  }
+
+  const handleAudio = async url => {
     myAudio.current.src = url
+    await sleep(600)
     myAudio.current.play()
   }
 
