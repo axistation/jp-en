@@ -34,7 +34,7 @@ const Wrapper = styled.main`
     text-transform: capitalize;
   }
   .container {
-    max-width: 968px;
+    max-width: 960px;
     margin: 2rem auto 4rem auto;
     /* padding: 1rem 0; */
   }
