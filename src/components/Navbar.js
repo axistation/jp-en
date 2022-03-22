@@ -8,8 +8,17 @@ const Navbar = () => {
       <div className="navbar">
         <div className="full-width">
           <h2>
-            <Link to="/">🗼 JP-EN Visual Dictionary</Link>
+            <Link to="/">JP-EN Visual Dictionary</Link>
           </h2>
+          <div className="nav-links">
+            <a
+              className="nav-link"
+              href="https://jpenphrase.netlify.app"
+              target="_blank"
+            >
+              Phrasebook
+            </a>
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -26,6 +35,12 @@ const Wrapper = styled.nav`
   }
   h2 {
     margin: 0 !important;
+  }
+
+  .nav-link {
+    display: inline-block;
+    color: rgb(168, 44, 44);
+    font-weight: 500;
   }
 `
 
