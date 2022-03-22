@@ -11,7 +11,7 @@ const Navbar = () => {
             <h2 className="nav-link">
               <Link to="/">JP-EN Visual Dictionary</Link>
             </h2>
-            <span className="seperator">|</span>
+            <span className="seperator"> </span>
             <a
               className="nav-link"
               href="https://jpenphrase.netlify.app"
@@ -35,6 +35,8 @@ const Wrapper = styled.nav`
     color: #333;
   }
   h2 {
+    font-size: 1rem;
+    font-weight: 800;
     margin: 0 !important;
   }
 
@@ -43,9 +45,8 @@ const Wrapper = styled.nav`
     color: rgb(168, 44, 44);
     font-weight: 500;
   }
-
   .seperator {
-    margin: 0 1rem;
+    margin: 0 0.8rem;
   }
 `
 

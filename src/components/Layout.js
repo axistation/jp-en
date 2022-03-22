@@ -39,7 +39,7 @@ const Wrapper = styled.main`
     /* padding: 1rem 0; */
   }
   .full-width {
-    max-width: 95%;
+    max-width: 99%;
     margin: 0 auto;
   }
   .center {
