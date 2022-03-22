@@ -7,10 +7,11 @@ const Navbar = () => {
     <Wrapper>
       <div className="navbar">
         <div className="full-width">
-          <h2>
-            <Link to="/">JP-EN Visual Dictionary</Link>
-          </h2>
           <div className="nav-links">
+            <h2 className="nav-link">
+              <Link to="/">JP-EN Visual Dictionary</Link>
+            </h2>
+            <span className="seperator">|</span>
             <a
               className="nav-link"
               href="https://jpenphrase.netlify.app"
@@ -38,9 +39,13 @@ const Wrapper = styled.nav`
   }
 
   .nav-link {
-    display: inline-block;
+    display: inline;
     color: rgb(168, 44, 44);
     font-weight: 500;
+  }
+
+  .seperator {
+    margin: 0 1rem;
   }
 `
 
