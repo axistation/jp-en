@@ -17,7 +17,7 @@ const Footer = () => {
 const Wrapper = styled.footer`
   .footer {
     height: 1.8rem;
-    background: #efefef;
+    background: var(--bg);
     position: fixed;
     left: 0;
     bottom: 0;
