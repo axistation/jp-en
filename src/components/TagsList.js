@@ -35,25 +35,25 @@ const TagsList = ({ words }) => {
 const Wrapper = styled.nav`
   .menubar .rest a {
     display: inline-block;
-    color: #999;
     text-align: center;
     padding: 1rem 0.5rem;
     text-decoration: none;
+    opacity: 0.5;
   }
 
   .menubar a:hover,
   .back:hover {
-    background-color: #eee;
-    color: #333;
+    opacity: 1;
   }
 
   .back {
     display: inline-block;
-    background: #fff;
+    background: var(--bg);
     position: sticky;
     left: 0;
     padding: 1rem;
     box-shadow: 5px 0px 5px -5px rgba(0, 0, 0, 0.4);
+    z-index: 99;
   }
   .rest {
     display: inline-block;

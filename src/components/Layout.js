@@ -6,7 +6,7 @@ import Footer from "./Footer"
 import styled from "styled-components"
 
 import "normalize.css"
-// import "../assets/css/main.css"
+import "../assets/css/main.css"
 
 const Layout = ({ children }) => {
   return (
@@ -33,6 +33,7 @@ const Wrapper = styled.main`
     padding: 0;
     text-transform: capitalize;
   }
+
   .container {
     max-width: 960px;
     margin: 2rem auto 4rem auto;
@@ -45,9 +46,11 @@ const Wrapper = styled.main`
   .center {
     text-align: center;
   }
-  a {
+  a,
+  h2,
+  label {
     text-decoration: none; /* no underline */
-    color: #333;
+    color: var(--textNormal);
   }
   .sticky {
     position: -webkit-sticky;

@@ -1,25 +1,42 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
 const Navbar = () => {
   return (
     <Wrapper>
       <div className="navbar">
         <div className="full-width">
-          <div className="nav-links">
-            <h2 className="nav-link">
-              <Link to="/">JP-EN Visual Dictionary</Link>
-            </h2>
-            <span className="seperator"> </span>
-            <a
-              className="nav-link"
-              href="https://jpenphrase.netlify.app"
-              target="_blank"
-            >
-              Phrasebook
-            </a>
-          </div>
+          <ul className="nav-links">
+            <li>
+              <Link to="/">
+                <h2>JP-EN Visual Dictionary</h2>
+              </Link>
+            </li>
+            <li>
+              <div>
+                <a href="https://jpenphrase.netlify.app" target="_blank">
+                  Phrasebook
+                </a>
+                <ThemeToggler>
+                  {({ theme, toggleTheme }) => (
+                    <label>
+                      <input
+                        className="toggle"
+                        type="checkbox"
+                        onChange={e =>
+                          toggleTheme(e.target.checked ? "dark" : "light")
+                        }
+                        checked={theme === "dark"}
+                      />{" "}
+                      Dark mode
+                    </label>
+                  )}
+                </ThemeToggler>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </Wrapper>
@@ -27,26 +44,15 @@ const Navbar = () => {
 }
 
 const Wrapper = styled.nav`
-  .navbar {
-    background: #efefef;
-    padding: 0.8rem 0;
+  .nav-links {
+    padding-top: 1rem;
+    margin: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
   }
-  a {
-    color: #333;
-  }
-  h2 {
-    font-size: 1rem;
-    font-weight: 800;
-    margin: 0 !important;
-  }
-
-  .nav-link {
-    display: inline;
-    color: rgb(168, 44, 44);
-    font-weight: 500;
-  }
-  .seperator {
-    margin: 0 0.8rem;
+  .toggle {
+    margin-left: 1rem;
   }
 `
 

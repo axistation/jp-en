@@ -36,10 +36,10 @@ const Menubar = () => {
 
 const Wrapper = styled.nav`
   .menubar {
-    background-color: #fff;
     overflow: auto;
     white-space: nowrap;
     box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.4);
+    background: var(--bg);
   }
 `
 

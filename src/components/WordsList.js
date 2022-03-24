@@ -93,7 +93,7 @@ const Wrapper = styled.section`
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
   .card {
-    color: #333;
+    color: var(--textNormal);
   }
   .card:hover {
     opacity: 0.9;
@@ -109,7 +109,7 @@ const Wrapper = styled.section`
   }
   .text {
     padding-bottom: 0.5rem;
-    color: #999;
+    color: var(--textNormal);
     text-transform: lowercase;
   }
   .search-container {
@@ -121,7 +121,7 @@ const Wrapper = styled.section`
     padding: 0.8rem;
     border: 1px solid #999;
     border-radius: 0;
-
+    background: var(--searchBg);
     ::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
       color: #bbb;
