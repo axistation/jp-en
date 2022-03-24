@@ -23,6 +23,7 @@ const Wrapper = styled.footer`
     bottom: 0;
     width: 100%;
     box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.4);
+    color: var(--textNormal);
   }
   div {
     line-height: 2rem;
