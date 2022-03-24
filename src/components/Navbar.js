@@ -30,7 +30,7 @@ const Navbar = () => {
                         }
                         checked={theme === "dark"}
                       />{" "}
-                      Dark mode
+                      Dark
                     </label>
                   )}
                 </ThemeToggler>

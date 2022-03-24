@@ -62,6 +62,11 @@ const Wrapper = styled.main`
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
   }
+  @media only screen and (max-width: 768px) {
+    h2 {
+      font-size: 1rem;
+    }
+  }
 `
 
 export default Layout

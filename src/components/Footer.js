@@ -24,6 +24,7 @@ const Wrapper = styled.footer`
     width: 100%;
     box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.4);
     color: var(--textNormal);
+    font-size: 0.8rem;
   }
   div {
     line-height: 2rem;
