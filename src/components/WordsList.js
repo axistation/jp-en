@@ -122,20 +122,21 @@ const Wrapper = styled.section`
     border: 1px solid #999;
     border-radius: 0;
     background: var(--searchBg);
+    color: var(--textNormal);
     ::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: #bbb;
+      color: var(--textNormal);
       opacity: 1; /* Firefox */
     }
 
     :-ms-input-placeholder {
       /* Internet Explorer 10-11 */
-      color: #bbb;
+      color: var(--textNormal);
     }
 
     ::-ms-input-placeholder {
       /* Microsoft Edge */
-      color: #bbb;
+      color: var(--textNormal);
     }
     text-transform: none;
   }
