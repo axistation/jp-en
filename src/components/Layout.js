@@ -40,7 +40,7 @@ const Wrapper = styled.main`
     /* padding: 1rem 0; */
   }
   .full-width {
-    padding: 0 2rem;
+    padding: 0 1rem;
     margin: 0 auto;
   }
   .center {
@@ -65,10 +65,6 @@ const Wrapper = styled.main`
   @media only screen and (max-width: 768px) {
     h2 {
       font-size: 1rem;
-    }
-    .full-width {
-      padding: 0 1rem;
-      margin: 0 auto;
     }
   }
 `
