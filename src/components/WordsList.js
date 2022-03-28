@@ -8,8 +8,16 @@ import styled from "styled-components"
 const WordsList = ({ words = [] }) => {
   const count = 50
 
+  const makeRandom = words =>
+    words
+      .map(a => ({ sort: Math.random(), value: a }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(a => a.value)
+
+  const randWords = makeRandom(words)
+
   const [searchField, setSearchField] = useState("")
-  const [newWords, setNewWords] = useState(words.slice(0, count))
+  const [newWords, setNewWords] = useState(randWords.slice(0, count))
   const myAudio = useRef("")
 
   // const filteredWords = words.filter(word => {
@@ -33,7 +41,7 @@ const WordsList = ({ words = [] }) => {
       })
       setNewWords(results.slice(0, count))
     } else {
-      setNewWords(words.slice(0, count))
+      setNewWords(randWords.slice(0, count))
     }
   }
 
@@ -46,14 +54,6 @@ const WordsList = ({ words = [] }) => {
     await sleep(600)
     myAudio.current.play()
   }
-
-  const randNewWords = newWords =>
-    newWords
-      .map(a => ({ sort: Math.random(), value: a }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(a => a.value)
-
-  const randWords = randNewWords(newWords)
 
   return (
     <Wrapper>
@@ -70,7 +70,7 @@ const WordsList = ({ words = [] }) => {
       <p className="text">{`showing at most ${count} results in random order`}</p>
 
       <div className="wrapper">
-        {randWords.map(word => {
+        {newWords.map(word => {
           const { id, english, japanese, romaji, image, audio } = word
 
           const pathToImage = getImage(image)
