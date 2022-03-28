@@ -47,6 +47,14 @@ const WordsList = ({ words = [] }) => {
     myAudio.current.play()
   }
 
+  const randNewWords = newWords =>
+    newWords
+      .map(a => ({ sort: Math.random(), value: a }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(a => a.value)
+
+  const randWords = randNewWords(newWords)
+
   return (
     <Wrapper>
       <audio ref={myAudio} src={""} />
@@ -59,10 +67,10 @@ const WordsList = ({ words = [] }) => {
           onChange={handleSearchChange}
         />
       </div>
-      <p className="text">{`showing at most ${count} results in alphabetical order`}</p>
+      <p className="text">{`showing at most ${count} results in random order`}</p>
 
       <div className="wrapper">
-        {newWords.map(word => {
+        {randWords.map(word => {
           const { id, english, japanese, romaji, image, audio } = word
 
           const pathToImage = getImage(image)
