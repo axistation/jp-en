@@ -70,7 +70,7 @@ const WordsList = ({ words = [] }) => {
             >
               {/*<Link key={id} to={`/${slug}`}>*/}
               <GatsbyImage image={pathToImage} className="img" alt={english} />
-              <p>
+              <p className="card-text">
                 <b>{english}</b> | {japanese} | {romaji}
               </p>
             </div>
@@ -89,11 +89,14 @@ const Wrapper = styled.section`
   }
   .card {
     color: var(--textNormal);
-    text-transform: lowercase;
   }
   .card:hover {
     opacity: 0.9;
     cursor: pointer;
+  }
+  .card-text,
+  .card-text b {
+    text-transform: lowercase;
   }
   .img {
     width: 100%;
