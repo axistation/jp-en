@@ -54,7 +54,7 @@ const WordsList = ({ words = [] }) => {
           onChange={handleSearchChange}
         />
       </div>
-      <p className="text">{`showing at most ${count} results by most recent`}</p>
+      <p className="text">{`showing at most ${count} results sorted by date added`}</p>
 
       <div className="wrapper">
         {newWords.map(word => {
@@ -94,8 +94,7 @@ const Wrapper = styled.section`
     opacity: 0.9;
     cursor: pointer;
   }
-  .card-text,
-  .card-text b {
+  .card-text {
     text-transform: lowercase;
   }
   .img {
