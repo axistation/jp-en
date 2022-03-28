@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 
 const query = graphql`
   {
-    allContentfulWord(sort: { fields: english, order: ASC }) {
+    allContentfulWord(sort: { fields: image___updatedAt, order: DESC }) {
       nodes {
         id
         english

@@ -8,16 +8,8 @@ import styled from "styled-components"
 const WordsList = ({ words = [] }) => {
   const count = 50
 
-  const makeRandom = words =>
-    words
-      .map(a => ({ sort: Math.random(), value: a }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(a => a.value)
-
-  const randWords = makeRandom(words)
-
   const [searchField, setSearchField] = useState("")
-  const [newWords, setNewWords] = useState(randWords.slice(0, count))
+  const [newWords, setNewWords] = useState(words.slice(0, count))
   const myAudio = useRef("")
 
   // const filteredWords = words.filter(word => {
@@ -41,17 +33,12 @@ const WordsList = ({ words = [] }) => {
       })
       setNewWords(results.slice(0, count))
     } else {
-      setNewWords(newWords.slice(0, count))
+      setNewWords(words.slice(0, count))
     }
-  }
-
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
   }
 
   const handleAudio = async url => {
     myAudio.current.src = url
-    await sleep(600)
     myAudio.current.play()
   }
 
@@ -67,7 +54,7 @@ const WordsList = ({ words = [] }) => {
           onChange={handleSearchChange}
         />
       </div>
-      <p className="text">{`showing at most ${count} results in random order`}</p>
+      <p className="text">{`showing at most ${count} results by most recent`}</p>
 
       <div className="wrapper">
         {newWords.map(word => {
