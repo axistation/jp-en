@@ -41,7 +41,7 @@ const WordsList = ({ words = [] }) => {
       })
       setNewWords(results.slice(0, count))
     } else {
-      setNewWords(randWords.slice(0, count))
+      setNewWords(newWords.slice(0, count))
     }
   }
 
