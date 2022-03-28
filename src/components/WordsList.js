@@ -89,6 +89,7 @@ const Wrapper = styled.section`
   }
   .card {
     color: var(--textNormal);
+    text-transform: lowercase;
   }
   .card:hover {
     opacity: 0.9;
